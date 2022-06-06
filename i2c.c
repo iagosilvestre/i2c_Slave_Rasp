@@ -12,13 +12,13 @@ int main(void)
 {
 	int fd = open("/dev/i2c-1",O_RDWR);
 	ioctl(fd,I2C_SLAVE,I2C_ADDR);
-	buffer[0] = 0b00000010;
+	buffer[0] = '0';
 
 	for(;;) 
 	{
 		write(fd,buffer,1);
 		read(fd,buffer,1);
-		printf("0x%02X\n",buffer[0]);
+		printf("%c\n",buffer[0]);
 		usleep(100000);
 	}
 
