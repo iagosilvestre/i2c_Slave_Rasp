@@ -5,7 +5,7 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 
-#define I2C_ADDR 0x08
+#define I2C_ADDR 0x08 << 1
 char buffer[50];
 
 int main(void) 
